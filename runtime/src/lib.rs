@@ -39,8 +39,8 @@ pub use frame_support::{
 };
 use pallet_transaction_payment::CurrencyAdapter;
 
-/// Import the template pallet.
-pub use pallet_template;
+/// Import the nft pallet.
+pub use pallet_nft;
 
 /// An index to a block.
 pub type BlockNumber = u32;
@@ -259,8 +259,8 @@ impl pallet_sudo::Config for Runtime {
 	type Call = Call;
 }
 
-/// Configure the template pallet in pallets/template.
-impl pallet_template::Config for Runtime {
+/// Configure the nft pallet in pallets/nft.
+impl pallet_nft::Config for Runtime {
 	type Event = Event;
 }
 
@@ -279,8 +279,8 @@ construct_runtime!(
 		Balances: pallet_balances::{Module, Call, Storage, Config<T>, Event<T>},
 		TransactionPayment: pallet_transaction_payment::{Module, Storage},
 		Sudo: pallet_sudo::{Module, Call, Config<T>, Storage, Event<T>},
-		// Include the custom logic from the template pallet in the runtime.
-		TemplateModule: pallet_template::{Module, Call, Storage, Event<T>},
+		// Include the custom logic from the nft pallet in the runtime.
+		NftModule: pallet_nft::{Module, Call, Storage, Event<T>},
 	}
 );
 
